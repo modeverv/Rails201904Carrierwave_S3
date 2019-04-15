@@ -9,6 +9,18 @@
   <strong>Body:</strong>
   <%= @blog.body %>
 </p>
+<!-- 追加箇所 開始 -->
+
+<p>
+  <strong>Image:</strong>
+  <% if @blog.image? %>
+    <div class="thumbnail">
+      <%= image_tag @blog.image.url %>
+    </div>
+  <% end %>
+</p>
+<!-- 追加箇所 終了 -->
+
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
