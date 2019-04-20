@@ -49,6 +49,8 @@ gem 'sidekiq'
 gem 'sidekiq-cron'
 
 gem 'unicorn'
+# ActiveStorage S3
+gem 'aws-sdk'
 
 group :production do
   gem 'pg'

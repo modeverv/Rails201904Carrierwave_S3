@@ -30,5 +30,6 @@ module Sample
     }
 
     config.active_job.queue_adapter = :sidekiq
+    config.active_storage.service = :amazon
   end
 end

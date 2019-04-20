@@ -21,7 +21,14 @@
   <% end %>
 </p>
 <!-- 追加箇所 終了 -->
-
+<p>
+  <strong>img:</strong>
+  <% if @blog.img.attached? %>
+    <div class="thumbnail">
+      <%= image_tag @blog.img %>
+    </div>
+  <% end %>
+</p>
 
 <%= link_to t(:edit), edit_blog_path(@blog),class: "btn btn-sm btn-primary",style: "color:#fff" %> 
 <%= link_to t(:back), blogs_path,class: "btn btn-sm btn-primary",style: "color:#fff" %>

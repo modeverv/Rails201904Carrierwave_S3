@@ -65,10 +65,11 @@ class BlogsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
       @blog = Blog.find(params[:id])
+      p @blog.img
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body, :image, :image_cache, :remove_image)
+      params.require(:blog).permit(:title, :body, :image, :image_cache, :remove_image,:img)
     end
 end
