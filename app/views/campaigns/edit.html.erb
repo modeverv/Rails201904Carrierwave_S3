@@ -1,0 +1,6 @@
+<h1>Editing Campaign</h1>
+
+<%= render 'form', campaign: @campaign, path: blog_campaign_path %>
+
+<%= link_to 'Show', blog_campaign_path(id: @campaign.id) %> |
+<%= link_to 'Back', blog_campaigns_path(blog_id: @campaign.blog_id) %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @campaign.name %>
+</p>
+
+<p>
+  <strong>Blog:</strong>
+  <%= @campaign.blog %>
+</p>
+
+<%= link_to 'Edit', edit_blog_campaign_path(@campaign.blog_id,@campaign.id),class: "btn btn-primary",style: "color:#fff" %>
+<%= link_to 'Back', blog_campaigns_path(blog_id: @campaign.blog_id),class: "btn btn-primary",style: "color:#fff" %>

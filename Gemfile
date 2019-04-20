@@ -41,6 +41,11 @@ gem 'fog'
 
 gem 'dotenv-rails'
 
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
+gem 'rails-i18n'
+gem 'rb-readline'
+
 group :production do
   gem 'pg'
 end
