@@ -18,7 +18,7 @@ module Sample
     config.i18n.default_locale = :ja
 
     config.action_mailer.raise_delivery_errors = true
-    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.delivery_method = :mailgun #:smtp
     config.action_mailer.smtp_settings = {
       port:                 587,
       address:              'smtp.gmail.com',
@@ -27,6 +27,10 @@ module Sample
       password:             ENV["SMTP_PASS"],
       authentication:       'login',
       enable_starttls_auto: true
+    }
+    config.action_mailer.mailgun_settings = {
+      api_key: ENV['MAILGUN_API'],
+      domain: ENV['MAILGUN_DOMAIN']
     }
 
     config.active_job.queue_adapter = :sidekiq

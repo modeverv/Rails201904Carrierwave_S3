@@ -50,7 +50,8 @@ gem 'sidekiq-cron'
 
 gem 'unicorn'
 # ActiveStorage S3
-gem 'aws-sdk'
+gem 'aws-sdk',   :require => "aws-sdk"
+gem 'mailgun-ruby'
 
 group :production do
   gem 'pg'

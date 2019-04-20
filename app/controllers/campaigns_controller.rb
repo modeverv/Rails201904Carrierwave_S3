@@ -12,6 +12,7 @@ class CampaignsController < ApplicationController
   # GET /campaigns/1
   # GET /campaigns/1.json
   def show
+#     SampleMailer.send_when_create.deliver
   end
 
   # GET /campaigns/new
@@ -34,8 +35,8 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.new(campaign_params)
     respond_to do |format|
       if @campaign.save
-        # SampleMailer.send_when_create.deliver_later
-        MyJob.perform_later
+        SampleMailer.send_when_create.deliver
+        #MyJob.perform_later
         format.html { redirect_to blog_campaign_path(id: @campaign.id, blog_id: @campaign.blog_id), notice: 'Campaign was successfully created.' }
         format.html { redirect_to @campaign, notice: 'Campaign was successfully created.' }
         format.json { render :show, status: :created, location: @campaign }
