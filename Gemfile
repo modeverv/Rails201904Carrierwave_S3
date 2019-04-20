@@ -44,7 +44,9 @@ gem 'dotenv-rails'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'rails-i18n'
-gem 'rb-readline'
+
+gem 'sidekiq'
+gem 'sidekiq-cron'
 
 group :production do
   gem 'pg'
@@ -55,6 +57,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'rb-readline'
+
 end
 
 group :development do
