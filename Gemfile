@@ -48,6 +48,8 @@ gem 'rails-i18n'
 gem 'sidekiq'
 gem 'sidekiq-cron'
 
+gem 'unicorn'
+
 group :production do
   gem 'pg'
 end
