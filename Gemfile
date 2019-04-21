@@ -52,6 +52,7 @@ gem 'unicorn'
 # ActiveStorage S3
 gem 'aws-sdk',   :require => "aws-sdk"
 gem 'mailgun-ruby'
+gem 'mail-iso-2022-jp'
 
 group :production do
   gem 'pg'

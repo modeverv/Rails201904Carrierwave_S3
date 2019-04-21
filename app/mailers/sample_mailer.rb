@@ -12,8 +12,9 @@ class SampleMailer < ApplicationMailer
       attachments['test.png'] = data
       puts "atttached!!!"
     end
-    mail to:      "modeverv@gmail.com",
+    mail to:   "modeverv@gmail.com",
+#         charset: 'iso-2022-jp',
          from: "noreply@example.com",
-         subject: Time.now.to_s
+         subject: Time.now.to_s + "日本語です"
   end
 end
