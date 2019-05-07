@@ -1,6 +1,13 @@
 class ApplicationController < ActionController::Base
   before_action :basic
 
+  def current_user
+    @current_user ||= User.last
+    p @current_user
+  end
+
+  helper_method :current_user
+
   private
 
   def basic

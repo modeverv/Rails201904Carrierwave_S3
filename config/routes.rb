@@ -2,6 +2,7 @@ require 'sidekiq/web'
 require 'sidekiq/cron/web'
 
 Rails.application.routes.draw do
+  resources :users
   # resources :campaigns
   resources :blogs do 
     resources :campaigns

@@ -53,6 +53,7 @@ gem 'unicorn'
 gem 'aws-sdk',   :require => "aws-sdk"
 gem 'mailgun-ruby'
 gem 'mail-iso-2022-jp'
+gem 'cancancan'
 
 group :production do
   gem 'pg'
