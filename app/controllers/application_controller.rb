@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.last
-    p @current_user
+      p @current_user
   end
 
   helper_method :current_user

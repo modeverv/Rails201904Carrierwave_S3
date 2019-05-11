@@ -1,34 +1,36 @@
+# frozen_string_literal: true
+
 class CampaignsController < ApplicationController
-  before_action :set_campaign, only: [:show, :edit, :update, :destroy]
+  before_action :set_campaign, only: %i[show edit update destroy]
   authorize_resource
 
   # GET /campaigns
   # GET /campaigns.json
   def index
-    #@campaigns = Campaign.all
+    # @campaigns = Campaign.all
     @campaigns = Campaign.where(blog_id: params[:blog_id])
     p @campaigns
+    
   end
 
   # GET /campaigns/1
   # GET /campaigns/1.json
   def show
-#     SampleMailer.send_when_create.deliver
+    #     SampleMailer.send_when_create.deliver
   end
 
   # GET /campaigns/new
   def new
     blog = Blog.find(params[:blog_id])
     @campaign = blog.campaigns.new
-#    @campaign = Campaign.new
-#    if params[:blog_id]
-#      @campaign.blog_id = params[:blog_id]
-#    end
+    #    @campaign = Campaign.new
+    #    if params[:blog_id]
+    #      @campaign.blog_id = params[:blog_id]
+    #    end
   end
 
   # GET /campaigns/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /campaigns
   # POST /campaigns.json
@@ -74,13 +76,14 @@ class CampaignsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_campaign
-      @campaign = Campaign.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def campaign_params
-      params.require(:campaign).permit(:name, :blog_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_campaign
+    @campaign = Campaign.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def campaign_params
+    params.require(:campaign).permit(:name, :blog_id)
+  end
 end

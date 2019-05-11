@@ -12,6 +12,7 @@ class Ability
     if user.member?
       can :read, :all
       can :manage, Blog
+      
     end
 
     # Define abilities for the passed in user here. For example:

@@ -1,0 +1,6 @@
+{
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveTimeout": 5000,
+    "ruby.rubocop.executePath": "/Users/seijiro/.rvm/gems/ruby-2.6.3/bin/",
+    "ruby.format": "rubocop",
+}
