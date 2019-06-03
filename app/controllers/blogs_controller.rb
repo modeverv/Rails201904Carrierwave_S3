@@ -44,7 +44,7 @@ class BlogsController < ApplicationController
   def update
     #p params
     if params[:change_body]
-      puts "特殊処理"
+      puts "特殊処睆"
     end
     respond_to do |format|
       if @blog.update(blog_params)
@@ -77,6 +77,6 @@ class BlogsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def blog_params
-    params.require(:blog).permit(:title, :body, :image, :image_cache, :remove_image, :img)
+    params.require(:blog).permit(:title, :body, :image, :image_cache, :remove_image, :img, tag_ids: [])
   end
 end

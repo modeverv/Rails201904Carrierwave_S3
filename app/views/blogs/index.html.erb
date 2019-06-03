@@ -8,6 +8,7 @@
     <tr>
       <th><%= t(:title) %></th>
       <th><%= t(:body) %></th>
+      <th>タグ</th>      
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,6 +18,9 @@
       <tr>
         <td><%= blog.title %></td>
         <td><%= blog.body %></td>
+        <td><% blog.tags.each do |t|  %>
+          <%= t.title%>
+        <% end %></td>              
         <td><%= link_to t(:show), blog ,class: "btn btn-sm btn-primary",style: "color:#fff" %></td>
         <td><%= link_to t(:edit), edit_blog_path(blog) ,class: "btn btn-sm btn-primary",style: "color:#fff"%></td>
         <td><%= link_to t(:delete), blog, method: :delete, data: { confirm: t(:confirm) } ,class: "btn btn-danger btn-sm",style: "color:#fff"%></td>
