@@ -42,12 +42,13 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
-    #p params
     if params[:change_body]
-      puts "特殊処睆"
+      ps = params.require(:blog).permit(:body)
+    else
+      ps = blog_params
     end
     respond_to do |format|
-      if @blog.update(blog_params)
+      if @blog.update(ps)
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
         format.json { render :show, status: :ok, location: @blog }
       else
